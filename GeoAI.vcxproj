@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A5DD24D7-2212-4F7A-ADF9-45F946228BCD}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall Condition="'$(QtInstall)'==''">osgeo4w-qgis-dev_QT5</QtInstall>
+    <QtModules>core;gui;widgets;sql;network;xml</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall Condition="'$(QtInstall)'==''">osgeo4w-qgis-dev_QT5</QtInstall>
+    <QtModules>core;gui;sql;widgets;network;xml</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <QGIS_PREFIX Condition="'$(QGIS_PREFIX)'==''">C:\OSGeo4W\apps\qgis-ltr</QGIS_PREFIX>
+    <QGIS_3RDPARTY Condition="'$(QGIS_3RDPARTY)'==''">C:\OSGeo4W</QGIS_3RDPARTY>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(QGIS_PREFIX)\include;$(QGIS_3RDPARTY)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(QGIS_PREFIX)\lib;$(QGIS_3RDPARTY)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>qgis_core.lib;qgis_gui.lib;gdal_i.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(QGIS_PREFIX)\include;$(QGIS_3RDPARTY)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(QGIS_PREFIX)\lib;$(QGIS_3RDPARTY)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>qgis_core.lib;qgis_gui.lib;gdal_i.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <PreprocessorDefinitions>_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 /openmp %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(QGIS_PREFIX)\include;$(QGIS_3RDPARTY)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(QGIS_PREFIX)\lib;$(QGIS_3RDPARTY)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <PreprocessorDefinitions>_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalOptions>/utf-8 /openmp %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(QGIS_PREFIX)\include;$(QGIS_3RDPARTY)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>qgis_core.lib;qgis_gui.lib;gdal_i.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(QGIS_PREFIX)\lib;$(QGIS_3RDPARTY)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <QtRcc Include="GeoAI.qrc" />
+    <QtUic Include="GeoAI.ui" />
+    <QtMoc Include="GeoAI.h" />
+    <!-- Core layer -->
+    <QtMoc Include="core\MapLayer.h" />
+    <QtMoc Include="core\DataSource.h" />
+    <QtMoc Include="core\Renderer.h" />
+    <QtMoc Include="core\LayerManager.h" />
+    <ClCompile Include="core\MapLayer.cpp" />
+    <ClCompile Include="core\DataSource.cpp" />
+    <ClCompile Include="core\Renderer.cpp" />
+    <ClCompile Include="core\AnalysisCommand.cpp" />
+    <ClCompile Include="core\LayerManager.cpp" />
+    <!-- Data access layer -->
+    <ClCompile Include="SQL\DataAccessObject.cpp" />
+    <ClCompile Include="SQL\SpatiaLiteDAO.cpp" />
+    <ClCompile Include="SQL\SpatialQuery.cpp" />
+    <ClInclude Include="SQL\SqlHelper.h" />
+    <!-- Analysis layer -->
+    <QtMoc Include="analysis\SpatialAnalyzer.h" />
+    <QtMoc Include="analysis\Analyzers.h" />
+    <ClCompile Include="analysis\SpatialAnalyzer.cpp" />
+    <ClCompile Include="analysis\Analyzers.cpp" />
+    <!-- NLP layer -->
+    <ClCompile Include="nlp\QueryParser.cpp" />
+    <ClCompile Include="nlp\RuleBasedParser.cpp" />
+    <ClCompile Include="nlp\LLMParser.cpp" />
+    <!-- UI layer -->
+    <QtMoc Include="ui\MapCanvas.h" />
+    <QtMoc Include="ui\LayerTreeWidget.h" />
+    <QtMoc Include="ui\AnalysisPanel.h" />
+    <QtMoc Include="ui\NLInputWidget.h" />
+    <QtMoc Include="ui\AttributeTableWidget.h" />
+    <QtMoc Include="ui\OverviewMap.h" />
+    <ClCompile Include="ui\MapCanvas.cpp" />
+    <ClCompile Include="ui\LayerTreeWidget.cpp" />
+    <ClCompile Include="ui\AnalysisPanel.cpp" />
+    <ClCompile Include="ui\NLInputWidget.cpp" />
+    <ClCompile Include="ui\AttributeTableWidget.cpp" />
+    <ClCompile Include="ui\OverviewMap.cpp" />
+    <!-- Entry point -->
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="GeoAI.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

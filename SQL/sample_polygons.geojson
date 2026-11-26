@@ -1,0 +1,79 @@
+{
+  "type": "FeatureCollection",
+  "name": "sample_polygons",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "保护区A", "type": "保护区", "面积": 25.5 },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [116.390, 39.905], [116.410, 39.905],
+          [116.410, 39.918], [116.390, 39.918],
+          [116.390, 39.905]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "保护区B", "type": "保护区", "面积": 15.2 },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [116.360, 39.895], [116.378, 39.895],
+          [116.378, 39.905], [116.360, 39.905],
+          [116.360, 39.895]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "建筑区A", "type": "建筑区", "面积": 10.0 },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [116.395, 39.910], [116.408, 39.910],
+          [116.408, 39.916], [116.395, 39.916],
+          [116.395, 39.910]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "建筑区B", "type": "建筑区", "面积": 8.3 },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [116.375, 39.900], [116.388, 39.900],
+          [116.388, 39.908], [116.375, 39.908],
+          [116.375, 39.900]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "耕地区A", "type": "耕地", "面积": 30.0 },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [116.355, 39.888], [116.385, 39.888],
+          [116.385, 39.898], [116.355, 39.898],
+          [116.355, 39.888]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "公园A", "type": "公园", "面积": 5.5 },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [116.405, 39.920], [116.418, 39.920],
+          [116.418, 39.928], [116.405, 39.928],
+          [116.405, 39.920]
+        ]]
+      }
+    }
+  ]
+}

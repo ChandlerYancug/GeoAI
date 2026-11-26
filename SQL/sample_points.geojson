@@ -1,0 +1,17 @@
+{
+  "type": "FeatureCollection",
+  "name": "sample_points",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+  "features": [
+    { "type": "Feature", "properties": { "name": "学校A", "type": "学校", "人口": 1200 }, "geometry": { "type": "Point", "coordinates": [116.397, 39.908] } },
+    { "type": "Feature", "properties": { "name": "学校B", "type": "学校", "人口": 800 }, "geometry": { "type": "Point", "coordinates": [116.405, 39.915] } },
+    { "type": "Feature", "properties": { "name": "学校C", "type": "学校", "人口": 1500 }, "geometry": { "type": "Point", "coordinates": [116.380, 39.900] } },
+    { "type": "Feature", "properties": { "name": "医院A", "type": "医院", "人口": 3000 }, "geometry": { "type": "Point", "coordinates": [116.410, 39.912] } },
+    { "type": "Feature", "properties": { "name": "医院B", "type": "医院", "人口": 5000 }, "geometry": { "type": "Point", "coordinates": [116.390, 39.905] } },
+    { "type": "Feature", "properties": { "name": "医院C", "type": "医院", "人口": 2000 }, "geometry": { "type": "Point", "coordinates": [116.420, 39.920] } },
+    { "type": "Feature", "properties": { "name": "城市A", "type": "城市", "人口": 800000 }, "geometry": { "type": "Point", "coordinates": [116.400, 39.910] } },
+    { "type": "Feature", "properties": { "name": "城市B", "type": "城市", "人口": 300000 }, "geometry": { "type": "Point", "coordinates": [116.350, 39.890] } },
+    { "type": "Feature", "properties": { "name": "城市C", "type": "城市", "人口": 600000 }, "geometry": { "type": "Point", "coordinates": [116.430, 39.930] } },
+    { "type": "Feature", "properties": { "name": "城市D", "type": "城市", "人口": 450000 }, "geometry": { "type": "Point", "coordinates": [116.370, 39.885] } }
+  ]
+}

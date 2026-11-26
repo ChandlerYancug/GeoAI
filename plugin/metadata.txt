@@ -1,0 +1,11 @@
+[general]
+name=GeoAI
+description=AI-Enhanced Spatial Analysis Platform
+version=1.0
+qgisMinimumVersion=3.14
+author=OOP Course Project
+email=
+about=GeoAI integrates LLM-powered natural language query with QGIS spatial analysis.
+
+[experimental]
+deprecated=False

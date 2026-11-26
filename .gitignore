@@ -1,0 +1,33 @@
+# ---- Visual Studio ----
+.vs/
+x64/
+GeoAI/x64/
+Debug/
+Release/
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+*.sdf
+*.opensdf
+*.ipch
+*.idb
+
+# ---- Build artifacts ----
+*.exe
+*.dll
+*.lib
+*.obj
+*.pdb
+*.ilk
+*.tlog
+*.log
+*.exp
+
+# ---- OS ----
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ---- Large course data (18 MB GeoTIFF, not needed to build/run) ----
+data/CourseData/raster/
