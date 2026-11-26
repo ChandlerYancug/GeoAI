@@ -59,7 +59,11 @@
     <Import Project="$(QtMsBuild)\Qt.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros">
+    <!-- Prefer the course dev bundle when present; override on the command line
+         with /p:QGIS_PREFIX=... and /p:QGIS_3RDPARTY=... -->
+    <QGIS_PREFIX Condition="'$(QGIS_PREFIX)'=='' and Exists('E:\CourseResource\OOP\osgeo4w-qgis-dev\QGIS-ltr\include')">E:\CourseResource\OOP\osgeo4w-qgis-dev\QGIS-ltr</QGIS_PREFIX>
     <QGIS_PREFIX Condition="'$(QGIS_PREFIX)'==''">C:\OSGeo4W\apps\qgis-ltr</QGIS_PREFIX>
+    <QGIS_3RDPARTY Condition="'$(QGIS_3RDPARTY)'=='' and Exists('E:\CourseResource\OOP\osgeo4w-qgis-dev\3rdParty\include')">E:\CourseResource\OOP\osgeo4w-qgis-dev\3rdParty</QGIS_3RDPARTY>
     <QGIS_3RDPARTY Condition="'$(QGIS_3RDPARTY)'==''">C:\OSGeo4W</QGIS_3RDPARTY>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
